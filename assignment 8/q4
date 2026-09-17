@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Showcase Layout</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        background:#f4f4f4;
+        padding:30px;
+    }
+
+    h1{
+        text-align:center;
+        margin-bottom:30px;
+        color:#333;
+    }
+
+    /* Grid Layout */
+    .gallery{
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);
+        gap:20px;
+        max-width:1200px;
+        margin:auto;
+    }
+
+    figure{
+        background:white;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .image-container{
+        position:relative;
+        overflow:hidden;
+    }
+
+    img{
+        width:100%;
+        height:250px;
+        object-fit:cover;
+        display:block;
+        transition:transform 0.4s ease;
+    }
+
+    /* Dark Overlay */
+    .overlay{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.35);
+        opacity:0;
+        transition:opacity 0.4s ease;
+    }
+
+    /* Hover Effects */
+    figure:hover img{
+        transform:scale(1.1);
+    }
+
+    figure:hover .overlay{
+        opacity:1;
+    }
+
+    figcaption{
+        padding:15px;
+        text-align:center;
+        font-weight:bold;
+        color:#444;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 700px){
+        .gallery{
+            grid-template-columns:1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>Image Showcase Gallery</h1>
+
+<div class="gallery">
+
+    <figure>
+        <div class="image-container">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Mountain">
+            <div class="overlay"></div>
+        </div>
+        <figcaption>Beautiful Mountain</figcaption>
+    </figure>
+
+    <figure>
+        <div class="image-container">
+            <img src="https://picsum.photos/id/1025/600/400" alt="Dog">
+            <div class="overlay"></div>
+        </div>
+        <figcaption>Friendly Dog</figcaption>
+    </figure>
+
+    <figure>
+        <div class="image-container">
+            <img src="https://picsum.photos/id/1040/600/400" alt="Forest">
+            <div class="overlay"></div>
+        </div>
+        <figcaption>Green Forest</figcaption>
+    </figure>
+
+    <figure>
+        <div class="image-container">
+            <img src="https://picsum.photos/id/1069/600/400" alt="Beach">
+            <div class="overlay"></div>
+        </div>
+        <figcaption>Sunny Beach</figcaption>
+    </figure>
+
+    <figure>
+        <div class="image-container">
+            <img src="https://picsum.photos/id/1074/600/400" alt="City">
+            <div class="overlay"></div>
+        </div>
+        <figcaption>Modern City</figcaption>
+    </figure>
+
+    <figure>
+        <div class="image-container">
+            <img src="https://picsum.photos/id/1084/600/400" alt="Lake">
+            <div class="overlay"></div>
+        </div>
+        <figcaption>Peaceful Lake</figcaption>
+    </figure>
+
+</div>
+
+</body>
+</html>

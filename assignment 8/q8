@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box-Sizing Comparison</title>
+
+<style>
+    body{
+        margin:0;
+        padding:20px;
+        font-family:Arial, sans-serif;
+        background:#f4f4f4;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+    }
+
+    .container{
+        max-width:900px;
+        text-align:center;
+    }
+
+    h1{
+        color:#333;
+        margin-bottom:15px;
+    }
+
+    .description{
+        margin-bottom:30px;
+        color:#555;
+        line-height:1.6;
+    }
+
+    /* Flexbox Layout */
+    .box-container{
+        display:flex;
+        justify-content:center;
+        gap:30px;
+        flex-wrap:wrap;
+    }
+
+    /* Common Box Styles */
+    .box{
+        width:250px;
+        padding:40px;
+        border:8px solid #333;
+        color:white;
+        font-weight:bold;
+        border-radius:10px;
+        text-align:center;
+    }
+
+    /* Default Content-Box */
+    .content-box{
+        background:#e74c3c;
+        box-sizing:content-box; /* Default */
+    }
+
+    /* Border-Box */
+    .border-box{
+        background:#3498db;
+        box-sizing:border-box;
+    }
+
+    .label{
+        margin-top:15px;
+        color:#333;
+        font-weight:bold;
+    }
+
+    /* Responsive Layout */
+    @media (max-width:700px){
+        .box-container{
+            flex-direction:column;
+            align-items:center;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Box-Sizing Comparison</h1>
+
+    <p class="description">
+        Both boxes have the same declared width (250px), padding (40px),
+        and border (8px). The red box uses the default
+        <strong>content-box</strong>, where padding and border are added
+        to the specified width. The blue box uses
+        <strong>border-box</strong>, where padding and border are included
+        inside the specified width, keeping the total size smaller.
+    </p>
+
+    <div class="box-container">
+
+        <div>
+            <div class="box content-box">
+                content-box<br>
+                Width: 250px<br>
+                Padding: 40px<br>
+                Border: 8px
+            </div>
+            <p class="label">Default (content-box)</p>
+        </div>
+
+        <div>
+            <div class="box border-box">
+                border-box<br>
+                Width: 250px<br>
+                Padding: 40px<br>
+                Border: 8px
+            </div>
+            <p class="label">box-sizing: border-box</p>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

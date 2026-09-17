@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Animation Demonstration</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        background:#f4f4f4;
+
+        /* Center all animations */
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .container{
+        display:flex;
+        gap:80px;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+    }
+
+    /* ==========================
+       1. Moving Box Animation
+       ========================== */
+    .moving-box{
+        width:80px;
+        height:80px;
+        background:#3498db;
+        border-radius:10px;
+
+        animation:moveBox 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes moveBox{
+        from{
+            transform:translateX(0);
+        }
+        to{
+            transform:translateX(120px);
+        }
+    }
+
+    /* ==========================
+       2. Bouncing Ball Animation
+       ========================== */
+    .ball{
+        width:70px;
+        height:70px;
+        background:#e74c3c;
+        border-radius:50%;
+
+        animation:bounce 1.5s ease-in-out infinite;
+        animation-delay:0.5s;
+    }
+
+    @keyframes bounce{
+        0%,100%{
+            transform:translateY(0);
+        }
+        50%{
+            transform:translateY(-120px);
+        }
+    }
+
+    /* ==========================
+       3. Color Changing Text
+       ========================== */
+    .animated-text{
+        font-size:2rem;
+        font-weight:bold;
+
+        animation:changeColor 4s ease-in-out infinite alternate;
+        animation-iteration-count:infinite;
+        animation-direction:alternate;
+    }
+
+    @keyframes changeColor{
+        0%{
+            color:#3498db;
+        }
+        25%{
+            color:#9b59b6;
+        }
+        50%{
+            color:#e67e22;
+        }
+        75%{
+            color:#27ae60;
+        }
+        100%{
+            color:#e74c3c;
+        }
+    }
+
+    .item{
+        text-align:center;
+    }
+
+    .label{
+        margin-top:15px;
+        font-weight:bold;
+        color:#444;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Moving Box -->
+    <div class="item">
+        <div class="moving-box"></div>
+        <div class="label">Moving Box</div>
+    </div>
+
+    <!-- Bouncing Ball -->
+    <div class="item">
+        <div class="ball"></div>
+        <div class="label">Bouncing Ball</div>
+    </div>
+
+    <!-- Color Changing Text -->
+    <div class="item">
+        <div class="animated-text">CSS Animation</div>
+        <div class="label">Color Changing Text</div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Tooltip Demonstration</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body{
+        height:100vh;
+        background:#f4f4f4;
+        
+        /* Flexbox Center Alignment */
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .container{
+        display:flex;
+        gap:40px;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .tooltip-box{
+        position:relative;
+        cursor:pointer;
+        padding:12px 20px;
+        background:#3498db;
+        color:white;
+        border-radius:8px;
+        font-weight:bold;
+    }
+
+    /* Tooltip */
+    .tooltip-text{
+        position:absolute;
+        bottom:125%;
+        left:50%;
+        transform:translateX(-50%);
+        
+        background:#333;
+        color:white;
+        padding:8px 12px;
+        border-radius:6px;
+        white-space:nowrap;
+        font-size:14px;
+
+        /* Hidden by default */
+        opacity:0;
+        visibility:hidden;
+
+        /* Smooth fade effect */
+        transition:0.3s ease-in-out;
+    }
+
+    /* Small Arrow */
+    .tooltip-text::after{
+        content:"";
+        position:absolute;
+        top:100%;
+        left:50%;
+        transform:translateX(-50%);
+        border-width:6px;
+        border-style:solid;
+        border-color:#333 transparent transparent transparent;
+    }
+
+    /* Show Tooltip on Hover */
+    .tooltip-box:hover .tooltip-text{
+        opacity:1;
+        visibility:visible;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="tooltip-box">
+        Home
+        <span class="tooltip-text">
+            Go to Homepage
+        </span>
+    </div>
+
+    <div class="tooltip-box">
+        Profile
+        <span class="tooltip-text">
+            View Your Profile
+        </span>
+    </div>
+
+    <div class="tooltip-box">
+        Settings
+        <span class="tooltip-text">
+            Change Account Settings
+        </span>
+    </div>
+
+    <div class="tooltip-box">
+        Contact
+        <span class="tooltip-text">
+            Contact Support Team
+        </span>
+    </div>
+
+</div>
+
+</body>
+</html>

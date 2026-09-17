@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Interface Components</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        min-height:100vh;
+
+        /* Soft Background Gradient */
+        background:linear-gradient(135deg, #dfe9f3, #ffffff);
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
+
+    /* Card Container */
+    .card{
+        background:white;
+        width:400px;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    h2{
+        text-align:center;
+        color:#333;
+    }
+
+    /* Search Bar */
+    .search-box{
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:10px;
+        outline:none;
+        transition:0.3s ease;
+    }
+
+    .search-box:focus{
+        border-color:#4a90e2;
+        box-shadow:0 0 8px rgba(74,144,226,0.4);
+    }
+
+    /* Dropdown */
+    select{
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:10px;
+        outline:none;
+        transition:0.3s ease;
+    }
+
+    select:focus{
+        border-color:#4a90e2;
+        box-shadow:0 0 8px rgba(74,144,226,0.4);
+    }
+
+    /* Button Container */
+    .buttons{
+        display:flex;
+        justify-content:center;
+        gap:15px;
+        flex-wrap:wrap;
+    }
+
+    /* Buttons */
+    button{
+        padding:12px 24px;
+        border:none;
+        border-radius:10px;
+        cursor:pointer;
+        font-weight:bold;
+        transition:0.3s ease;
+        box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .primary{
+        background:#4a90e2;
+        color:white;
+    }
+
+    .secondary{
+        background:#2ecc71;
+        color:white;
+    }
+
+    /* Hover Effect */
+    button:hover{
+        transform:translateY(-3px);
+        box-shadow:0 6px 14px rgba(0,0,0,0.2);
+    }
+
+    /* Active Effect */
+    button:active{
+        transform:scale(0.96);
+    }
+
+    /* Focus Effect */
+    button:focus{
+        outline:none;
+        box-shadow:0 0 8px rgba(74,144,226,0.5);
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+    <h2>UI Components Demo</h2>
+
+    <!-- Search Bar -->
+    <input
+        type="text"
+        class="search-box"
+        placeholder="Search here..."
+    >
+
+    <!-- Dropdown Menu -->
+    <select>
+        <option>Select Category</option>
+        <option>Technology</option>
+        <option>Education</option>
+        <option>Sports</option>
+        <option>Entertainment</option>
+    </select>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button class="primary">Search</button>
+        <button class="secondary">Submit</button>
+    </div>
+
+</div>
+
+</body>
+</html>
